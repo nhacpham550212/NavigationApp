@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listProductFragment">
+    <fragment
+        android:id="@+id/listProductFragment"
+        android:name="vn.edu.ntu.lamnhac.navigationapp.ListProductFragment"
+        android:label="list_product"
+        tools:layout="@layout/list_product" >
+        <action
+            android:id="@+id/action_listProductFragment_to_importProductFragment"
+            app:destination="@id/importProductFragment"
+            app:popUpTo="@id/listProductFragment"/>
+        <action
+            android:id="@+id/action_listProductFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="vn.edu.ntu.lamnhac.navigationapp.CartFragment"
+        android:label="cart_product"
+        tools:layout="@layout/cart_product" >
+        <action
+            android:id="@+id/action_cartFragment_to_confirmFragment"
+            app:popUpTo="@id/cartFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="vn.edu.ntu.lamnhac.navigationapp.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm" >
+        <action
+            android:id="@+id/action_confirmFragment_to_listProductFragment"
+            app:destination="@id/listProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/importProductFragment"
+        android:name="vn.edu.ntu.lamnhac.navigationapp.ImportProductFragment"
+        android:label="fragment_import_product"
+        tools:layout="@layout/fragment_import_product" >
+        <action
+            android:id="@+id/action_importProductFragment_to_listProductFragment"
+            app:destination="@id/listProductFragment" />
+    </fragment>
+</navigation>
